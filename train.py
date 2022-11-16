@@ -79,6 +79,7 @@ if __name__ == '__main__':
     train_list = [i for i in range(config['n_train'])]
 
     # execute the model on an example data to test things
+    # map2angle mapps the cylindrical coordinates to [0,1]
     X, Ri, Ro, y = train_data[0]
     model([map2angle(X), Ri, Ro])
 
