@@ -5,8 +5,8 @@ log_dir     : 'logs/test_CGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
 n_files     : 100
-n_valid     : 50
-n_train     : 50
+n_valid     : 10
+n_train     : 10
 lr_c        : 0.01
 batch_size  : 1
 n_iters     : 3

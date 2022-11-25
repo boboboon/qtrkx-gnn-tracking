@@ -1,8 +1,8 @@
-train_dir : data/train 
-valid_dir : data/valid 
+train_dir : /Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/all_events/graph_data_1pt/train 
+valid_dir : /Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/all_events/graph_data_1pt/valid 
 dataset : mu200_1pT 
 log_dir : logs/test_CGNN/run1/ 
-run_type : new_run 
+run_type : continue 
 gpu : -1 
 n_files : 100 
 n_valid : 50 
@@ -10,7 +10,7 @@ n_train : 50
 lr_c : 0.01 
 batch_size : 1 
 n_iters : 3 
-n_epoch : 30 
+n_epoch : 3 
 TEST_every : 50 
 hid_dim : 4 
 network : CGNN 
