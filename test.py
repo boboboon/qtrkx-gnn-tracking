@@ -68,12 +68,12 @@ def test(config, model, test_type):
     fpr, tpr, _ = metrics.roc_curve(labels.astype(int),preds,pos_label=1 )
     auc                = metrics.auc(fpr,tpr)
 
-    tn, fp, fn, tp = metrics.confusion_matrix(
+    tn_3, fp_3, fn_3, tp_3 = metrics.confusion_matrix(
         labels.astype(int),(preds > 0.3)*1
         ).ravel() # get the confusion matrix for 0.3 threshold
-    accuracy_3  = (tp+tn)/(tn+fp+fn+tp)
-    precision_3 = tp/(tp+fp) # also named purity
-    recall_3    = tp/(tp+fn) # also named efficiency
+    accuracy_3  = (tp_3+tn_3)/(tn_3+fp_3+fn_3+tp_3)
+    precision_3 = tp_3/(tp_3+fp_3) # also named purity
+    recall_3    = tp_3/(tp_3+fn_3) # also named efficiency
     f1_3        = (2*precision_3*recall_3)/(precision_3+recall_3) 
 
     tn, fp, fn, tp = metrics.confusion_matrix(
@@ -96,9 +96,12 @@ def test(config, model, test_type):
     duration = time.time() - t_start
 
     # Log Metrics
+    # Our log_extension will either be for training or validation (i.e. how the model performs on the two datasets). We can 
     with open(config['log_dir']+'log_'+log_extension+'.csv', 'a') as f:
         f.write('%f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %d\n' %(accuracy_5, auc, loss, precision_5, accuracy_3, precision_3, recall_3, f1_3, accuracy_5, precision_5, recall_5, f1_5, accuracy_7, precision_7, recall_7, f1_7, duration))
 
+    # I think we want a CSV with a list of the predictions and the labels so we can calculate our own thresholds and purity stuff later!
+    
     # Print summary
     print(str(datetime.datetime.now()) + ': ' + log_extension+' Test:  Loss: %.4f,  AUC: %.4f, Acc: %.4f,  Precision: %.4f -- Elapsed: %dm%ds' %(loss, auc, accuracy_5*100, precision_5, duration/60, duration%60))
 
