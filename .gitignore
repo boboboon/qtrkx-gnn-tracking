@@ -139,3 +139,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+logs
+
+logs/test_CGNN/run1

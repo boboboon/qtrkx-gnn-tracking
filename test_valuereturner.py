@@ -7,7 +7,7 @@ from sklearn import metrics
 from tools.tools import *
 import tensorflow as tf
 
-def test(config, model, test_type):
+def test_valuereturner(config, model, test_type):
     print(
         str(datetime.datetime.now()) 
         + ' Starting testing the %s set with '%(test_type)
@@ -107,5 +107,8 @@ def test(config, model, test_type):
     # Print summary
     print(str(datetime.datetime.now()) + ': ' + log_extension+' Test:  Loss: %.4f,  AUC: %.4f, Acc: %.4f,  Precision: %.4f -- Elapsed: %dm%ds' %(loss, auc, accuracy_5*100, precision_5, duration/60, duration%60))
 
-    del labels
-    del preds
+    return labels, preds
+    
+    
+    #del labels
+    #del preds
