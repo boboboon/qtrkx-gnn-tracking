@@ -50,7 +50,7 @@ def test(config, model, test_type):
 
     loss = loss_fn(labels, preds, sample_weight=weights).numpy()
 
-    #going to try a loss_fn without weights as something is causing a bias towards 1 predictions even without training
+    
 
     # Log all predictons (takes some considerable time - use only for debugging)
     if config['log_verbosity']>=3 and test_type=='valid':	

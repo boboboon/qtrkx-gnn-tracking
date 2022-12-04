@@ -185,9 +185,19 @@ def true_fake_weights(labels):
     weights are calculated using scripts/print_dataset_specs.py
 
     '''
+
+    #wj=n_samples / (n_classes * n_samplesj) as our weights formula
+
+    n_0=362326
+    n_1=436946
+    n_t=n_0+n_1
+
+    w0=n_t/(2*n_0)
+    w1=n_t/(2*n_1)
+
     if tools.config['dataset'] == 'mu200':
         weight_list = [1.102973565242351, 0.9146118742361756]
-    elif tools.config['dataset'] == 'mu200_1pT':
+    elif tools.config['dataset'] == 'mu200_1pT': #--> This one is for our current dataset in QTrkx
         weight_list = [1.024985997012696, 0.9762031776515252]
     elif tools.config['dataset'] == 'mu200_full':
         weight_list = [0.5424779619482216, 6.385404773061769]
@@ -195,6 +205,9 @@ def true_fake_weights(labels):
         weight_list = [3.030203859885135, 0.5988062677334424]
     elif tools.config['dataset'] == 'mu10_big':
         weight_list = [0.9369978711656622, 1.0720851667609774]
+
+    elif tools.config['dataset'] == 'self':
+        weight_list = [3.030203859885135, 0.5988062677334424]
     else:
         raise ValueError('dataset not defined')
 
