@@ -1,17 +1,20 @@
-train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/10_events/train'
-valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/10_events/valid'
-dataset     : 'self'
+train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/tuysuz_100_events/train'
+valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/HepTrkX-quantum/data/tuysuz_100_events/valid'
+dataset     : 'TuysuzPaper'
 log_dir     : 'logs/test_CGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
-n_files     : 160
-n_valid     : 20
-n_train     : 20
+n_files     : 1600
+#n_valid     : 800 
+#n_train     : 800
+n_valid     : 10 
+n_train     : 10
 lr_c        : 0.01
 batch_size  : 1
-n_iters     : 3
-n_epoch     : 30
-TEST_every  : 20
+n_iters     : 1
+n_epoch     : 10
+#TEST_every  : 800
+TEST_every  : 10
 hid_dim     : 4
 network     : 'CGNN'
 optimizer: 'Adam'

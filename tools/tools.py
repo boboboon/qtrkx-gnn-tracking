@@ -188,8 +188,8 @@ def true_fake_weights(labels):
 
     #wj=n_samples / (n_classes * n_samplesj) as our weights formula
 
-    n_0=362326
-    n_1=436946
+    n_0=555612
+    n_1=651266
     n_t=n_0+n_1
 
     w0=n_t/(2*n_0)
@@ -206,8 +206,8 @@ def true_fake_weights(labels):
     elif tools.config['dataset'] == 'mu10_big':
         weight_list = [0.9369978711656622, 1.0720851667609774]
 
-    elif tools.config['dataset'] == 'self':
-        weight_list = [3.030203859885135, 0.5988062677334424]
+    elif tools.config['dataset'] == 'TuysuzPaper':
+        weight_list = [w0, w1]
     else:
         raise ValueError('dataset not defined')
 
