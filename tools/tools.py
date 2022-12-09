@@ -51,7 +51,7 @@ def load_config(args):
         if len(glob.glob(config['log_dir']))==0:
             os.mkdir(config['log_dir'])
         # append RID to log dir
-        config['log_dir'] = config['log_dir']+'run{}/'.format(args.RID)
+        config['log_dir'] = config['log_dir']+'run {}/'.format(args.RID)
         if len(glob.glob(config['log_dir']))==0:
             os.mkdir(config['log_dir'])
         # print all configs
