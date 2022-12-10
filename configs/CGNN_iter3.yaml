@@ -5,13 +5,13 @@ log_dir     : 'logs/test_CGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
 n_files     : 1600
-n_valid     : 800
-n_train     : 800
+n_valid     : 80
+n_train     : 80
 lr_c        : 0.01
 batch_size  : 1
 n_iters     : 3
 n_epoch     : 20
-TEST_every  : 800
+TEST_every  : 80
 hid_dim     : 4
 network     : 'CGNN'
 optimizer: 'Adam'
