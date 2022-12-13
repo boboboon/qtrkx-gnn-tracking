@@ -14,8 +14,6 @@ from train_script import main
 
 
 
-config_input=r'configs/CGNN_variable.yaml'
-RID_input=r'grrrr'
 
 
 
