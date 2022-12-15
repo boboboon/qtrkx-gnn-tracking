@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "train.py", line 11, in <module>
+    from tools.tools import *
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/tools/tools.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+srun: error: compute-0-1: tasks 0-11: Exited with exit code 1
