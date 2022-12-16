@@ -9,6 +9,8 @@
 #SBATCH -n12
 #SBATCH --mail-user=zcaplcu@ucl.ac.uk
 #SBATCH --mail-type=ALL
+#SBATCH -o /home/xzcaplcu/repo/qtrkx-gnn-tracking/slurms/output.out
+#SBATCH -e /home/xzcaplcu/repo/qtrkx-gnn-tracking/slurms/error.out 
 eval "$(/share/apps/anaconda/3-2022.05/bin/conda shell.bash hook)"
 conda activate env
 cd /home/xzcaplcu/repo/qtrkx-gnn-tracking/
