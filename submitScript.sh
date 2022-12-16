@@ -12,4 +12,4 @@
 eval "$(/share/apps/anaconda/3-2022.05/bin/conda shell.bash hook)"
 conda activate env
 cd /home/xzcaplcu/repo/qtrkx-gnn-tracking/
-srun python3 train.py configs/CGNN_iter1.yaml 20 
+srun python3 fullmonty.py 

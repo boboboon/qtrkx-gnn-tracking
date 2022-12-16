@@ -24,10 +24,10 @@ RID_input=['1','2','3','4','5']
 
 config_input_list=[r'configs/CGNN_iter1.yaml',r'configs/CGNN_iter3.yaml',r'configs/CGNN_iter5.yaml',r'configs/CGNN_iter7.yaml']
 
-for i in range(4):
+for i in range(1):
     config=config_input_list[i]
     iter=2*i+1
-    for v in range(5):
+    for v in range(1):
         RID='{}-{}'.format(iter,v)
         print(config)
         print(RID)
