@@ -13,6 +13,8 @@ from test import test
 from train_script import main
 
 
+cwd=os.getcwd()
+print("HERE:",cwd)
 
 
 
@@ -24,7 +26,7 @@ RID_input=['1','2','3','4','5']
 
 config_input_list=[r'configs/CGNN_iter1.yaml',r'configs/CGNN_iter3.yaml',r'configs/CGNN_iter5.yaml',r'configs/CGNN_iter7.yaml']
 
-main(config_input_list[0],'0')
+main(config_input_list[0],'2')
 
 
 #for i in range(1):
