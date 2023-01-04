@@ -1,0 +1,4 @@
+/home/xzcaplcu/repo/qtrkx-gnn-tracking/test.py:93: RuntimeWarning: invalid value encountered in long_scalars
+  precision_7 = tp/(tp+fp) # also named purity
+/home/xzcaplcu/repo/qtrkx-gnn-tracking/test.py:93: RuntimeWarning: invalid value encountered in long_scalars
+  precision_7 = tp/(tp+fp) # also named purity
