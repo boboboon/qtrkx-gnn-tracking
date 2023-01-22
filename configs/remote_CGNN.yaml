@@ -5,8 +5,8 @@ log_dir     : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_CGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
 n_files     : 1600
-n_valid     : 1280
-n_train     : 320
+n_valid     : 320
+n_train     : 1280
 lr_c        : 0.01
 batch_size  : 1
 n_iters     : 1

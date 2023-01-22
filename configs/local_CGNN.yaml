@@ -1,0 +1,20 @@
+train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/train_new'
+valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/valid_new'
+dataset     : 'TuysuzPaper'
+log_dir     : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/logs/test_CGNN/'
+run_type    : 'new_run'
+gpu         : '-1'
+n_files     : 1600
+n_valid     : 320
+n_train     : 1280
+lr_c        : 0.01
+batch_size  : 1
+n_iters     : 1
+n_epoch     : 20
+TEST_every  : 1280
+hid_dim     : 4
+network     : 'CGNN'
+optimizer: 'Adam'
+loss_func: 'BinaryCrossentropy'
+n_thread    : 4
+log_verbosity: 2

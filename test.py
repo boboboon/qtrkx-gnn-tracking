@@ -4,8 +4,9 @@ import time
 import datetime
 import numpy as np
 from sklearn import metrics
-#from tools.tools import *
-from tools import *
+from tools.tools import *
+#from tools import *
+
 import tensorflow as tf
 
 def test(config, model, test_type):
