@@ -1,4 +1,9 @@
-/home/xzcaplcu/repo/qtrkx-gnn-tracking/test.py:93: RuntimeWarning: invalid value encountered in long_scalars
-  precision_7 = tp/(tp+fp) # also named purity
-/home/xzcaplcu/repo/qtrkx-gnn-tracking/test.py:93: RuntimeWarning: invalid value encountered in long_scalars
-  precision_7 = tp/(tp+fp) # also named purity
+Traceback (most recent call last):
+  File "fullmonty.py", line 29, in <module>
+    main(config_input_list[0],'3')
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/train_script.py", line 258, in main
+    if config['n_valid']: test(config, model, 'valid')
+  File "/home/xzcaplcu/repo/qtrkx-gnn-tracking/test.py", line 23, in test
+    valid_data = get_dataset(config['valid_dir'], config['n_valid'])
+NameError: name 'get_dataset' is not defined
+srun: error: compute-0-1: task 0: Exited with exit code 1
