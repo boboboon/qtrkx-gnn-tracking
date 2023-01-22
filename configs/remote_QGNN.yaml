@@ -1,12 +1,12 @@
 train_dir   : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/data_personal/train_new'
 valid_dir   : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/data_personal/valid_new'
 dataset     : 'TuysuzPaper'
-log_dir     : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_CGNN/'
+log_dir     : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
 n_files     : 100
-n_valid     : 50
-n_train     : 50
+n_valid     : 20
+n_train     : 80
 batch_size  : 1 
 lr_c        : 0.01
 n_iters     : 3
