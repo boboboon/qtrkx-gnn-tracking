@@ -27,7 +27,7 @@ RID_input=['1','2','3','4','5']
 
 config_input_list=[r'configs/CGNN_iter1.yaml',r'configs/CGNN_iter3.yaml',r'configs/CGNN_iter5.yaml',r'configs/CGNN_iter7.yaml']
 
-train_script.main('configs/local_CGNN.yaml','4')
+train_script.main('configs/remote_CGNN.yaml','4')
 
 
 #for i in range(1):
