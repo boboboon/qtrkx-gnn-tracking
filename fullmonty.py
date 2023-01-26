@@ -18,16 +18,7 @@ cwd=os.getcwd()
 print("HERE:",cwd)
 
 
-
-
-# So we want a script that trains a CGNN 5 times (updating the RID each time), then changes the number of iterations (increase from 2, 3 times i.e.: 1,3,5,7)
-
-RID_input=['1','2','3','4','5']
-
-
-config_input_list=[r'configs/CGNN_iter1.yaml',r'configs/CGNN_iter3.yaml',r'configs/CGNN_iter5.yaml',r'configs/CGNN_iter7.yaml']
-
-train_script.main('configs/remote_CGNN.yaml','4')
+train_script.main('configs/test_CGNN.yaml','5')
 
 
 #for i in range(1):

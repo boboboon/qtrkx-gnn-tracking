@@ -6,10 +6,17 @@ import time
 import datetime
 import csv
 from random import shuffle
-import tensorflow as tf
+#import tensorflow as tf
 # import internal scripts
+
 from tools.tools import *
 from test import test
+
+
+
+
+
+
 ###############################################################################
 def batch_train_step(n_step):
     '''combines multiple  graph inputs and executes a step on their mean'''
@@ -46,7 +53,16 @@ def batch_train_step(n_step):
 
     return loss_eval, grads
 
+def get_dataset(input_dir,n_files):
+    return GraphDataset(input_dir, n_files)
+
+
 if __name__ == '__main__':
+
+
+   
+
+
     # Read config file
     config = load_config(parse_args())
     tools.config = config
