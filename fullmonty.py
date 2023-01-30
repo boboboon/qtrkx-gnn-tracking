@@ -8,17 +8,15 @@ import csv
 from random import shuffle
 import tensorflow as tf
 # import internal scripts
-from tools.tools import *
+from tools.tools import get_dataset
 from test import test
 import train_script
 
 
 
-cwd=os.getcwd()
-print("HERE:",cwd)
 
 
-train_script.main('configs/test_CGNN.yaml','5')
+train_script.main('configs/local_CGNN.yaml','beta')
 
 
 #for i in range(1):

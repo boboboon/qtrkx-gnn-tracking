@@ -5,9 +5,7 @@ import datetime
 import numpy as np
 from sklearn import metrics
 #from tools.tools import *
-from tools.tools import *
-
-from tools.tools import get_dataset
+from tools import *
 
 import tensorflow as tf
 
