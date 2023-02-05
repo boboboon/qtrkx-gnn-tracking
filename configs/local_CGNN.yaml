@@ -1,5 +1,5 @@
-train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/train_0'
 valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/valid_0'
+train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/train_0'
 dataset     : 'TuysuzPaper'
 log_dir     : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/logs/test_CGNN/'
 run_type    : 'new_run'
@@ -11,7 +11,7 @@ lr_c        : 0.01
 batch_size  : 1
 n_iters     : 1
 n_epoch     : 20
-TEST_every  : 40
+TEST_every  : 10
 hid_dim     : 4
 network     : 'CGNN'
 optimizer: 'Adam'

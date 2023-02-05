@@ -16,7 +16,7 @@ import train_script
 
 
 
-train_script.main('configs/local_CGNN.yaml','beta')
+train_script.main('configs/local_CGNN.yaml','gamma')
 
 
 #for i in range(1):
