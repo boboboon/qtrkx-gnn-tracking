@@ -1,5 +1,7 @@
-valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/valid_0'
-train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/train_0'
+valid_dir   : '/Users/lucascurtin/Desktop/edge_data/valid_graphs'
+train_dir   : '/Users/lucascurtin/Desktop/edge_data/train_graphs'
+#valid_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/tuysuz_original/valid'
+#train_dir   : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/data_personal/tuysuz_original/train'
 dataset     : 'TuysuzPaper'
 log_dir     : '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/logs/test_CGNN/'
 run_type    : 'new_run'
@@ -10,7 +12,7 @@ n_train     : 80
 lr_c        : 0.01
 batch_size  : 1
 n_iters     : 1
-n_epoch     : 20
+n_epoch     : 10
 TEST_every  : 10
 hid_dim     : 4
 network     : 'CGNN'
