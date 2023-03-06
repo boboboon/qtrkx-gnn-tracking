@@ -207,7 +207,7 @@ def true_fake_weights(labels):
         weight_list = [0.9369978711656622, 1.0720851667609774]
 
     elif tools.config['dataset'] == 'TuysuzPaper':
-        weight_list = [w0, w1]
+        weight_list = [1, 1]
     else:
         raise ValueError('dataset not defined')
 
