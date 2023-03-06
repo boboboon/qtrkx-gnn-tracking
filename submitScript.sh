@@ -5,7 +5,7 @@
 #SBATCH --time 24:00:00
 #requesting one node
 #SBATCH -N1
-#requesting 12 cpus
+#requesting 1 cpu
 #SBATCH -n1
 #SBATCH --mail-user=zcaplcu@ucl.ac.uk
 #SBATCH --mail-type=ALL
