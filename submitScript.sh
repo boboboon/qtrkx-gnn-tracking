@@ -11,8 +11,9 @@
 #SBATCH --mail-type=ALL
 #SBATCH -o /home/xzcaplcu/repo/qtrkx-gnn-tracking/slurms/output.out
 #SBATCH -e /home/xzcaplcu/repo/qtrkx-gnn-tracking/slurms/error.out
-#SBATCH --mem-per-cpu 4G 
+#SBATCH --mem-per-cpu 20G 
 eval "$(/share/apps/anaconda/3-2022.05/bin/conda shell.bash hook)"
 conda activate env
 cd /home/xzcaplcu/repo/qtrkx-gnn-tracking/
-srun python3 fullmonty.py
+srun python3 train.py configs/remote_CGNN.yaml 1
+
