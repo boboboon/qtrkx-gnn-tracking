@@ -10,7 +10,7 @@ n_train     : 80
 batch_size  : 1 
 lr_c        : 0.01
 n_iters     : 3
-n_epoch     : 30
+n_epoch     : 20
 TEST_every  : 50
 hid_dim     : 4
 network     : 'QGNN'
