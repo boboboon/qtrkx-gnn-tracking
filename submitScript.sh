@@ -15,5 +15,5 @@
 eval "$(/share/apps/anaconda/3-2022.05/bin/conda shell.bash hook)"
 conda activate qtrkx
 cd /home/xzcaplcu/repo/qtrkx-gnn-tracking/
-srun python3 train.py configs/remote_QGNN.yaml 3
+srun python3 train.py configs/remote_QGNN.yaml dp1
 

@@ -4,13 +4,13 @@ dataset     : 'TuysuzPaper'
 log_dir     : '/home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/'
 run_type    : 'new_run'
 gpu         : '-1'
-n_files     : 100
-n_valid     : 20
-n_train     : 80
+n_files     : 10
+n_valid     : 2
+n_train     : 8
 batch_size  : 1 
 lr_c        : 0.01
 n_iters     : 3
-n_epoch     : 20
+n_epoch     : 3
 TEST_every  : 50
 hid_dim     : 4
 network     : 'QGNN'
