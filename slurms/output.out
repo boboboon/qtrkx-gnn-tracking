@@ -24,6 +24,63 @@ NN_qc: {'PQC_id': '10', 'IEC_id': 'simple_encoding_y', 'MC_id': 'measure_all', '
 Log dir: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/
 Training data input dir: /home/xzcaplcu/repo/qtrkx-gnn-tracking/data_personal/train_graphs
 Validation data input dir: /home/xzcaplcu/repo/qtrkx-gnn-tracking/data_personal/train_graphs
-We are using 1 CZ Gates
-We are using 0 CZ Gates
-We are using 0 CZ Gates
+2023-03-17 18:22:05.409373 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_validation.csv
+2023-03-17 18:22:05.409550 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_training.csv
+2023-03-17 18:22:05.409699 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/summary.csv
+2023-03-17 18:22:05.409854 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_0.csv
+2023-03-17 18:22:05.410003 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_1.csv
+2023-03-17 18:22:05.410178 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_2.csv
+2023-03-17 18:22:05.410533 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_3.csv
+2023-03-17 18:22:05.410695 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_4.csv
+2023-03-17 18:22:05.410832 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_5.csv
+2023-03-17 18:22:05.410969 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_6.csv
+2023-03-17 18:22:05.411120 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_7.csv
+2023-03-17 18:22:05.411267 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_8.csv
+2023-03-17 18:22:05.411431 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_9.csv
+2023-03-17 18:22:05.411578 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_10.csv
+2023-03-17 18:22:05.411718 Deleted old log: /home/xzcaplcu/repo/qtrkx-gnn-tracking/logs/test_QGNN/run dp1/log_parameters_11.csv
+Model: "GNN"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+InputNet (Dense)             multiple                  16        
+_________________________________________________________________
+EdgeNet (EdgeNet)            multiple                  81        
+_________________________________________________________________
+NodeNet (NodeNet)            multiple                  124       
+=================================================================
+Total params: 221
+Trainable params: 221
+Non-trainable params: 0
+_________________________________________________________________
+None
+2023-03-17 18:22:32.269919 Starting testing the valid set with 2 subgraphs!
+2023-03-17 18:23:09.758971: validation Test:  Loss: 0.7011,  AUC: 0.4962, Acc: 49.6408,  Precision: 0.5084 -- Elapsed: 0m37s
+2023-03-17 18:23:09.763475 Starting testing the train set with 2 subgraphs!
+2023-03-17 18:25:53.388939: training Test:  Loss: 0.7040,  AUC: 0.4832, Acc: 49.0101,  Precision: 0.4843 -- Elapsed: 2m43s
+2023-03-17 18:25:53.394444: Training is starting!
+2023-03-17 18:26:26.692139: Epoch: 1, Batch: 1, Loss: 0.7555, Elapsed: 0m33s
+2023-03-17 18:27:00.569396: Epoch: 1, Batch: 2, Loss: 0.7100, Elapsed: 0m33s
+2023-03-17 18:27:36.994257: Epoch: 1, Batch: 3, Loss: 0.6999, Elapsed: 0m36s
+2023-03-17 18:28:32.497381: Epoch: 1, Batch: 4, Loss: 0.6959, Elapsed: 0m55s
+2023-03-17 18:29:26.460680: Epoch: 1, Batch: 5, Loss: 0.6886, Elapsed: 0m53s
+2023-03-17 18:30:16.540773: Epoch: 1, Batch: 6, Loss: 0.6926, Elapsed: 0m50s
+2023-03-17 18:30:37.685984: Epoch: 1, Batch: 7, Loss: 0.6820, Elapsed: 0m21s
+2023-03-17 18:31:41.100592: Epoch: 1, Batch: 8, Loss: 0.7129, Elapsed: 1m3s
+2023-03-17 18:32:45.341698: Epoch: 2, Batch: 1, Loss: 0.6939, Elapsed: 1m4s
+2023-03-17 18:33:05.902633: Epoch: 2, Batch: 2, Loss: 0.6729, Elapsed: 0m20s
+2023-03-17 18:34:00.784222: Epoch: 2, Batch: 3, Loss: 0.6904, Elapsed: 0m54s
+2023-03-17 18:35:00.561067: Epoch: 2, Batch: 4, Loss: 0.6835, Elapsed: 0m59s
+2023-03-17 18:35:37.438923: Epoch: 2, Batch: 5, Loss: 0.7046, Elapsed: 0m36s
+2023-03-17 18:36:26.451437: Epoch: 2, Batch: 6, Loss: 0.7278, Elapsed: 0m49s
+2023-03-17 18:37:00.054906: Epoch: 2, Batch: 7, Loss: 0.6924, Elapsed: 0m33s
+2023-03-17 18:37:34.226438: Epoch: 2, Batch: 8, Loss: 0.6885, Elapsed: 0m34s
+2023-03-17 18:38:07.803225: Epoch: 3, Batch: 1, Loss: 0.7102, Elapsed: 0m33s
+2023-03-17 18:38:55.140201: Epoch: 3, Batch: 2, Loss: 0.7031, Elapsed: 0m47s
+2023-03-17 18:39:29.109510: Epoch: 3, Batch: 3, Loss: 0.7119, Elapsed: 0m33s
+2023-03-17 18:40:28.820089: Epoch: 3, Batch: 4, Loss: 0.7021, Elapsed: 0m59s
+2023-03-17 18:40:49.263094: Epoch: 3, Batch: 5, Loss: 0.6962, Elapsed: 0m20s
+2023-03-17 18:41:53.362865: Epoch: 3, Batch: 6, Loss: 0.6939, Elapsed: 1m4s
+2023-03-17 18:42:50.072833: Epoch: 3, Batch: 7, Loss: 0.7044, Elapsed: 0m56s
+2023-03-17 18:43:26.114033: Epoch: 3, Batch: 8, Loss: 0.6921, Elapsed: 0m36s
+2023-03-17 18:43:26.125713: Training completed!
