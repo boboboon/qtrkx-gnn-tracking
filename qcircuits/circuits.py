@@ -58,16 +58,16 @@ def qc10_pqc(circuit, qubits, n_layers=1, n_qubits=4, symbol_offset=0):
     for layer in range(n_layers):
         for i in range(n_qubits):
             x = random.uniform(0,1)
-            v=0
+            
             if x>0.3:
                 circuit.append(cirq.CZ(qubits[(n_qubits-2-i)%n_qubits], qubits[(n_qubits-1-i)%n_qubits]))
-                v+=1
+            
             
         
         for i, qubit in enumerate(qubits):
             #symbol = sympy.Symbol('theta_{}'.format(i+1+n_qubits*(layer+1)))
             circuit.append(cirq.ry(params[i+n_qubits*(layer+1)])(qubit))
-    print('We are using',v,'CZ Gates')
+    
     return params
 ###############################################################################
 def qc10_pqc_identity(circuit, qubits, n_layers=1, n_qubits=4):

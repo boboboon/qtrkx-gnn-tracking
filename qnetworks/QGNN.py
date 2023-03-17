@@ -108,6 +108,19 @@ class EdgeNet(tf.keras.layers.Layer):
             ],
             axis=1
         )        
+
+
+        qc = QCircuit(IEC_id=GNN.config['EN_qc']['IEC_id'],
+            PQC_id=GNN.config['EN_qc']['PQC_id'],
+            MC_id=GNN.config['EN_qc']['MC_id'],
+            n_layers=self.n_layers, 
+            input_size=self.n_qubits,
+            p=0.01)
+        
+        self.model_circuit, self.qubits = qc.model_circuit()
+        self.measurement_operators = qc.measurement_operators()
+
+        qc.model_circuit()
           
         # Get expectation values for all edges
         if GNN.config['EN_qc']['repetitions']==0:
@@ -269,12 +282,7 @@ class GNN(tf.keras.Model):
         # recurrent iteration of the network
         for i in range(self.n_iters):
             
-        #My plan here is to change the actual quantum architecture each iteration but without changing any of the params
-            qc = QCircuit(IEC_id=GNN.config['EN_qc']['IEC_id'], PQC_id=GNN.config['EN_qc']['PQC_id'], 
-                          MC_id=GNN.config['EN_qc']['MC_id'], n_layers=GNN.config['EN_qc']['n_layers'],
-                          input_size=GNN.config['EN_qc']['n_layers'],p=0.01)
-            
-            self.EdgeNet.model_circuit=qc.model_circuit()[0]
+    
 
             e = self.EdgeNet(H, Ri, Ro)
             H = self.NodeNet(H, e, Ri, Ro)

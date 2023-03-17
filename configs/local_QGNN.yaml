@@ -7,10 +7,10 @@ gpu         : '-1'
 n_files     : 10
 n_valid     : 2
 n_train     : 8
-batch_size  : 0.2
+batch_size  : 1
 lr_c        : 0.01
 n_iters     : 3
-n_epoch     : 1
+n_epoch     : 3
 TEST_every  : 1
 hid_dim     : 4
 network     : 'QGNN'

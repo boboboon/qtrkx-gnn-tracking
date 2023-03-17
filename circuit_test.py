@@ -430,4 +430,4 @@ qc = QCircuit(IEC_id='simple_encoding_y',
             p=0.01)
 
 
-print(qc.model_circuit())
+(qc.model_circuit())
