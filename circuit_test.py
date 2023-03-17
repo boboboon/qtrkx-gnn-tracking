@@ -3,6 +3,26 @@ import tensorflow_quantum as tfq
 import numpy as np
 import cirq
 from qcircuits.QCircuit import QCircuit
+import sys,yaml
+from tools.tools import *
+from test import test
+import cirq
+from cirq.contrib.svg import SVGCircuit
+import sympy
+
+import tensorflow as tf
+import tensorflow_quantum as tfq
+import numpy as np
+import cirq
+from qcircuits.QCircuit import QCircuit
+import sys,yaml
+from tools.tools import *
+from test import test
+import cirq
+from cirq.contrib.svg import SVGCircuit
+import sympy
+
+sys.path.insert(0, '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking')
 
 ###############################################################################
 class Rescale01(tf.keras.layers.Layer):
@@ -268,14 +288,6 @@ class GNN(tf.keras.Model):
         H = tf.concat([H,X],axis=1)
         # recurrent iteration of the network
         for i in range(self.n_iters):
-            
-        #My plan here is to change the actual quantum architecture each iteration but without changing any of the params
-            qc = QCircuit(IEC_id=GNN.config['EN_qc']['IEC_id'], PQC_id=GNN.config['EN_qc']['PQC_id'], 
-                          MC_id=GNN.config['EN_qc']['MC_id'], n_layers=GNN.config['EN_qc']['n_layers'],
-                          input_size=GNN.config['EN_qc']['n_layers'],p=0.01)
-            
-            self.EdgeNet.model_circuit=qc.model_circuit()[0]
-
             e = self.EdgeNet(H, Ri, Ro)
             H = self.NodeNet(H, e, Ri, Ro)
             # update H with the output of NodeNet
@@ -284,3 +296,138 @@ class GNN(tf.keras.Model):
         e = self.EdgeNet(H, Ri, Ro)
         # return edge prediction array
         return e
+
+def load_config(config_input,RID_input):
+
+    
+    # read the config file 
+    with open(config_input, 'r') as ymlfile:
+        config = yaml.load(ymlfile, Loader=yaml.FullLoader)
+        if len(glob.glob(config['log_dir']))==0:
+            os.mkdir(config['log_dir'])
+        # append RID to log dir
+        config['log_dir'] = config['log_dir']+'run{}/'.format(RID_input)
+        if len(glob.glob(config['log_dir']))==0:
+            os.mkdir(config['log_dir'])
+        # print all configs
+        print('Printing configs: ')
+        for key in config:
+            print(key + ': ' + str(config[key]))
+        print('Log dir: ' + config['log_dir'])
+        print('Training data input dir: ' + config['train_dir'])
+        print('Validation data input dir: ' + config['train_dir'])
+        if config['run_type'] == 'new_run':
+            delete_all_logs(config['log_dir'])
+    # LOG the config every time
+    with open(config['log_dir'] + 'config.yaml', 'w') as f:
+        for key in config:
+            f.write('%s : %s \n' %(key,str(config[key])))
+    # return the config dictionary
+    return config
+
+
+import sys, os, time, datetime, csv
+sys.path.insert(1, '/Users/lucascurtin/Desktop/QGNN Repos/qtrkx-gnn-tracking/tools')
+from tools import *
+import numpy as np
+import math
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from mpl_toolkits.mplot3d import Axes3D
+
+from tqdm import tqdm
+from matplotlib.lines import Line2D
+
+import trackml.dataset
+
+import pandas as pd
+
+from mpl_toolkits import mplot3d
+
+
+from collections import namedtuple
+
+import numpy as np
+
+# A Graph is a namedtuple of matrices (X, Ri, Ro, y)
+Graph = namedtuple('Graph', ['X', 'Ri', 'Ro', 'y'])
+
+def graph_to_sparse(graph):
+    Ri_rows, Ri_cols = graph.Ri.nonzero()
+    Ro_rows, Ro_cols = graph.Ro.nonzero()
+    return dict(X=graph.X, y=graph.y,
+                Ri_rows=Ri_rows, Ri_cols=Ri_cols,
+                Ro_rows=Ro_rows, Ro_cols=Ro_cols)
+
+def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.uint8):
+    n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
+    Ri = np.zeros((n_nodes, n_edges), dtype=dtype)
+    Ro = np.zeros((n_nodes, n_edges), dtype=dtype)
+    Ri[Ri_rows, Ri_cols] = 1
+    Ro[Ro_rows, Ro_cols] = 1
+    return Graph(X, Ri, Ro, y)
+
+def save_graph(graph, filename):
+    """Write a single graph to an NPZ file archive"""
+    np.savez(filename, **graph_to_sparse(graph))
+
+def save_graphs(graphs, filenames):
+    for graph, filename in zip(graphs, filenames):
+        save_graph(graph, filename)
+
+def load_graph(filename):
+    """Reade a single graph NPZ"""
+    with np.load(filename) as f:
+        return sparse_to_graph(**dict(f.items()))
+
+def load_graphs(filenames, graph_type=Graph):
+    return [load_graph(f, graph_type) for f in filenames]
+
+
+def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
+    n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
+    Ri = np.zeros((n_nodes, n_edges), dtype=dtype)
+    Ro = np.zeros((n_nodes, n_edges), dtype=dtype)
+    Ri[Ri_rows, Ri_cols] = 1
+    Ro[Ro_rows, Ro_cols] = 1
+    return Graph(X, Ri, Ro, y)
+
+
+def map2angle(arr0):
+    # Mapping the cylindrical coordinates to [0,1]
+    arr = np.zeros(arr0.shape, dtype=np.float32)
+    r_min     = 0.
+    r_max     = 1.1
+    arr[:,0] = (arr0[:,0]-r_min)/(r_max-r_min)    
+
+
+
+   
+    phi_min   = -1.0
+    phi_max   = 1.0
+    arr[:,1]  = (arr0[:,1]-phi_min)/(phi_max-phi_min) 
+    z_min     = 0
+    z_max     = 1.1
+    arr[:,2]  = (np.abs(arr0[:,2])-z_min)/(z_max-z_min)  # take abs of z due to symmetry of z
+
+    mapping_check(arr)
+    return arr
+
+n_qubits=4
+circuit= cirq.Circuit()
+qubits  = cirq.GridQubit.rect(n_qubits, 1)
+n_layers=1
+n_qubits=4
+symbol_offset=0
+params = sympy.symbols('theta{}:{}'.format(symbol_offset, symbol_offset + n_qubits*(1+n_layers)))
+
+qc = QCircuit(IEC_id='simple_encoding_y',
+            PQC_id='10',
+            MC_id='measure_all',
+            n_layers=n_layers, 
+            input_size=n_qubits,
+            p=0.01)
+
+
+print(qc.model_circuit())
