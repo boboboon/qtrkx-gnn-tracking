@@ -77,6 +77,7 @@
         "15": "qc15_pqc",
         "14": "qc14_pqc",
         "10": "qc10_pqc",
+        "10nocz": "qc10_pqc_nocz",
         "10P": "qc10P_pqc",
         "10_2des": "qc10_pqc_two_design",
         "10_2": "qc10_2_pqc",

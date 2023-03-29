@@ -428,6 +428,12 @@ qc = QCircuit(IEC_id='simple_encoding_y',
             n_layers=n_layers, 
             input_size=n_qubits,
             p=0.01)
-
+qc_2= QCircuit(IEC_id='simple_encoding_y',
+            PQC_id='10nocz',
+            MC_id='measure_all',
+            n_layers=n_layers, 
+            input_size=n_qubits,
+            p=0.01)
 
 (qc.model_circuit())
+(qc_2.model_circuit())

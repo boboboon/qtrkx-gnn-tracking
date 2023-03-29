@@ -220,8 +220,8 @@ class NodeNet(tf.keras.layers.Layer):
         bi  = tf.matmul(Ri, X, transpose_a=True) 
         Rwo = Ro * e[:,0]
         Rwi = Ri * e[:,0]
-        mi = tf.matmul(Rwi, bo)
-        mo = tf.matmul(Rwo, bi)
+        mi = tf.matmul(Rwi, bi)
+        mo = tf.matmul(Rwo, bo)
         # Shape of M = N_nodes x (3x (3 + Hidden Dimension Size))
         # mi: weighted average of input nodes
         # mo: weighted average of output nodes
