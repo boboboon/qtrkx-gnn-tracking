@@ -29,7 +29,6 @@ class NodeNet(tf.keras.layers.Layer):
         self.layer = tf.keras.Sequential([
             tf.keras.Input(shape=(hid_dim+3)*3,),
             tf.keras.layers.Dense(hid_dim, activation='tanh'),
-            tf.keras.layers.Dropout(.2, input_shape=(hid_dim,)),
             tf.keras.layers.Dense(hid_dim, activation='sigmoid'),
         ])
 
