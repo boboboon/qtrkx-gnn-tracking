@@ -2,7 +2,7 @@
 #submit to the normal COMPUTE partition for normal CPUS
 #SBATCH -p COMPUTE
 #request a different amount of time to the default 12h
-#SBATCH --time 24:00:00
+#SBATCH --time 60:00:00
 #requesting one node
 #SBATCH -N1
 #requesting 1 cpu
@@ -15,5 +15,5 @@
 eval "$(/share/apps/anaconda/3-2022.05/bin/conda shell.bash hook)"
 conda activate qtrkx
 cd /home/xzcaplcu/repo/qtrkx-gnn-tracking/
-srun python3 train.py configs/remote_QGNN.yaml dp1
+srun python3 train.py configs/remote_QGNN.yaml thesis2
 
