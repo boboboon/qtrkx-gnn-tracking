@@ -238,7 +238,7 @@ class NodeNet(tf.keras.layers.Layer):
                 input_to_circuit, 
                 tf.repeat(self.params,repeats=input_to_circuit.shape[0],axis=0)
             ],
-            axis=1
+            axis=1 
         )        
 
         # Get expectation values for all nodes
