@@ -85,21 +85,40 @@ def qc10_pqc(circuit, qubits, n_layers=1, n_qubits=4, symbol_offset=0):
 
     return params
 ###############################################################################
-def qc10_pqc_nocz(circuit, qubits, n_layers=1, n_qubits=4, symbol_offset=0):
-    params = sympy.symbols('theta{}:{}'.format(symbol_offset, symbol_offset + n_qubits*(1+n_layers)))
-    for i, qubit in enumerate(qubits):
-        #symbol = sympy.Symbol('theta_{}'.format(i+1))
-        circuit.append(cirq.ry(params[i])(qubit))
+def LVQE(circuit, qubits, n_layers=1, n_qubits=4, symbol_offset=0):
+    params = sympy.symbols('theta{}:{}'.format(0, 12*(n_layers)))
+    
     for layer in range(n_layers):
-            
-            
         
+        circuit.append(cirq.CZ(qubits[0], qubits[1]))
+        circuit.append(cirq.CZ(qubits[2], qubits[3]))
+        for i, qubit in enumerate(qubits):
+            #symbol = sympy.Symbol('theta_{}'.format(i+1+n_qubits*(layer+1)))
+            circuit.append(cirq.ry(params[i])(qubit))
+        
+        circuit.append(cirq.CZ(qubits[0], qubits[1]))
+        circuit.append(cirq.CZ(qubits[2], qubits[3]))
+
         for i, qubit in enumerate(qubits):
             #symbol = sympy.Symbol('theta_{}'.format(i+1+n_qubits*(layer+1)))
             circuit.append(cirq.ry(params[i+n_qubits*(layer+1)])(qubit))
-    
+
+        circuit.append(cirq.CZ(qubits[1], qubits[2]))
+
+        circuit.append(cirq.ry(params[8])(qubits[1]))
+        circuit.append(cirq.ry(params[9])(qubits[2]))
+
+        circuit.append(cirq.CZ(qubits[1], qubits[2]))
+
+        circuit.append(cirq.ry(params[10])(qubits[1]))
+        circuit.append(cirq.ry(params[11])(qubits[2]))
+
     return params
+
+
+
 ###############################################################################
+
 
 
 def qc10_pqc_identity(circuit, qubits, n_layers=1, n_qubits=4):

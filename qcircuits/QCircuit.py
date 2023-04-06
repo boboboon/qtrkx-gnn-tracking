@@ -67,7 +67,9 @@ class QCircuit:
 			n_params = (3*self.n_qubits + self.n_qubits/np.gcd(self.n_qubits,3))*self.n_layers
 		elif self.PQC_id == '10':
 			n_params = self.n_qubits*(self.n_layers+1)
-		elif self.PQC_id == '10nocz':
+		elif self.PQC_id == 'LVQE':
+			n_params = 8+ 24*self.n_layers
+		elif self.PQC_id == '10swap':
 			n_params = self.n_qubits*(self.n_layers+1)
 		elif self.PQC_id == '10P':
 			n_params = 2*self.n_qubits*(self.n_layers+1)
