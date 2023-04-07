@@ -71,6 +71,16 @@ def test(config, model, test_type):
     #n_edges = labels.shape[0]
     #n_class = [n_edges - sum(labels), sum(labels)]
 
+    # Add a small epsilon value to predicted probabilities to avoid extreme values
+    eps = 1e-6
+    preds = np.clip(preds, eps, 1-eps)
+
+    # Check for NaN values in input arrays
+    if np.isnan(labels).any() or np.isnan(preds).any():
+        raise ValueError("Input arrays contain NaN values")
+
+
+
     fpr, tpr, _ = metrics.roc_curve(labels.astype(int),preds,pos_label=1 )
     auc                = metrics.auc(fpr,tpr)
 
